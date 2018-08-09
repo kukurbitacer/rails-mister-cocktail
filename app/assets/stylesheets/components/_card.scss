@@ -1,0 +1,39 @@
+.card {
+  margin: 10px;
+  background-color: white;
+  height:250px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card-background {
+  background-image: linear-gradient(-45deg, rgba(0,0,0,0.47) 0%, rgba(0,0,0,0) 100%), asset-url('mojito.jpeg');
+  height : 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-info {
+  color : white;
+  padding: 10px;
+}
+
+.card-info h3 {
+  margin-left: 10px;
+  text-align: left;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2)
+}
+
+.cocktail-card {
+  height: 300px;
+
+}
+
+.cocktail-card p {
+  color:#545050;
+  margin : O;
+}
+
+.cocktail-card em {
+  color:#545050;
+}

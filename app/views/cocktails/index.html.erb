@@ -1,0 +1,19 @@
+<div class="background-pink">
+<h1 class="title-white">All cocktails</h1>
+<div class="container ">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <%= link_to cocktail_path(cocktail) do  %>
+        <div class="card-info card-background">
+          <h3><%= cocktail.name %></h3>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>
+

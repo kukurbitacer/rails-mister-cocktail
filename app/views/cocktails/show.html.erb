@@ -1,0 +1,25 @@
+<div class="background-pink ">
+  <h1 class="title-white">My <%= @cocktail.name %> Cocktail</h1>
+  <div class="info-cocktail">
+    <div class="card cocktail-card text-left">
+      <h3>How to make this cocktail</h3>
+      <ul>
+        <% @doses.each do |dose| %>
+        <li>
+          <p><%= dose.ingredient.name %>: <%= link_to cocktail_dose_path(@cocktail, dose) , method: :delete, data: {confirm: "Are your sure you want to delete this dose?"} do %>
+          <i class="fas fa-trash-alt"></i>
+          <% end %></p>
+
+          <em><%= dose.description %></em>
+
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <%= image_tag("mojito", size: "250x250", class: "image-coktail")%>
+  </div>
+
+
+  <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail) %>
+</div>
