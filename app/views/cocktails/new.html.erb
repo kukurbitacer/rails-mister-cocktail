@@ -7,6 +7,7 @@
       <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
         <%= simple_form_for(@cocktail) do |f| %>
         <%= f.input :name, input_html: { class: "field-rounded" }, label_html: { class: "label-white" } %>
+        <%= f.input :description,  input_html: { class: "field-rounded", rows: 5 }, label_html: { class: "label-white" } %>
         <%= f.input :photo, label: "Choose a picture",label_html: { id: "photo-input"}%>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit class: "button-white button-form"%>

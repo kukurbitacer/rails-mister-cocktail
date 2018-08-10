@@ -2,33 +2,41 @@
   <h1 class="title-white">My <%= @cocktail.name %> Cocktail</h1>
   <div class="info-cocktail">
     <%= cl_image_tag @cocktail.photo, height: 350, width: 500, crop: :fill , class: "image-cocktail"%>
-    <div class="card cocktail-card text-left">
-      <h3 class="text-center">How to make this cocktail</h3>
-      <ul class="list-unstyled">
-        <% @doses.each do |dose| %>
-        <li>
-          <p><%= link_to cocktail_dose_path(@cocktail, dose) , method: :delete, data: {confirm: "Are your sure you want to delete this dose?"}, class: "link-grey" do %>
-          <i class="fas fa-trash-alt"></i>
-          <% end %> <%= dose.ingredient.name %>:</p>
-          <em><%= dose.description %></em>
-        </li>
-        <% end %>
-      </ul>
+    <div class="info-band">
+      <div class="card cocktail-card text-left">
+        <h3 class="text-center">How to make this cocktail</h3>
+        <ul class="list-unstyled">
+          <% @doses.each do |dose| %>
+          <li>
+            <p><%= link_to cocktail_dose_path(@cocktail, dose) , method: :delete, data: {confirm: "Are your sure you want to delete this dose?"}, class: "link-grey" do %>
+              <i class="fas fa-trash-alt"></i>
+              <% end %> <%= dose.ingredient.name %>:</p>
+              <em><%= dose.description %></em>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="card text-left card-description">
+          <div class="card-overflow">
+          <h3 class="text-center">Description</h3>
+        <p><%= @cocktail.description %></p>
+        </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <h1 class="title-white">Add a new dose to your <%= @cocktail.name%></h1>
+    <h1 class="title-white">Add a new dose to your <%= @cocktail.name%></h1>
 
-  <div class="container form-margin">
-    <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
-        <%= simple_form_for [@cocktail, @dose] do |f| %>
-        <%= f.association :ingredient, select_html: { class: "field-rounded" }, label_html: { class: "label-white" }%>
-        <%= f.input :description, input_html: { class: "field-rounded" }, label_html: { class: "label-white" } %>
-        <%= f.submit class: "button-white button-form"%>
-        <% end %>
+    <div class="container form-margin">
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+          <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.association :ingredient, select_html: { class: "field-rounded" }, label_html: { class: "label-white" }%>
+          <%= f.input :description, input_html: { class: "field-rounded" }, label_html: { class: "label-white" } %>
+          <%= f.submit class: "button-white button-form"%>
+          <% end %>
 
+        </div>
       </div>
     </div>
   </div>
-</div>

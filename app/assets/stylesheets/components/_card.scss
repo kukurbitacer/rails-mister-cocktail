@@ -5,13 +5,29 @@
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
+.card-description {
+  padding :20px;
+  margin: 20px;
+}
+
+.card-description h3 {
+  margin-top : 7px;
+}
+
+.card-overflow {
+  overflow: scroll;
+  max-width: 400px;
+  width : 50vw;
+  height : 50vh;
+  max-height: 400px;
+
+}
+
 .card-info {
   color : white;
   padding: 10px;
   height :100%;
-  transition-property: background;
-  transition-duration: 1s;
-  transition: ease;
+  transition: all 0.5s ease-out;
 }
 
 .card-info:hover {
@@ -25,6 +41,11 @@
 
 .card-info ul {
   opacity: 0;
+  margin-left: 15px;
+}
+
+.card-info li {
+  margin-top : 4px;
 }
 
 .card-info h3 {
@@ -36,8 +57,9 @@
 .cocktail-card {
   height: 100%;
   padding : 20px 15px;
-  margin: 20px auto;
+  margin: 20px;
   max-width: 400px;
+  min-width: 200px
 }
 
 .cocktail-card p {
