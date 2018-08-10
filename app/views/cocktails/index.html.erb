@@ -4,13 +4,20 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card">
         <%= link_to cocktail_path(cocktail) do  %>
-        <div class="card-info card-background">
+      <div class="card card-height" style="background-image:linear-gradient(-45deg, rgba(0,0,0,0.47) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path cocktail.photo %>'); background-size: cover; background-position: center;">
+        <div class="card-info">
           <h3><%= cocktail.name %></h3>
+          <ul class="list-unstyled text-left">
+              <% cocktail.ingredients.each do |ingredient| %>
+                <li>
+                  <%= ingredient.name %>
+                </li>
+              <% end %>
+          </ul>
         </div>
-        <% end %>
       </div>
+        <% end %>
     </div>
     <% end %>
   </div>

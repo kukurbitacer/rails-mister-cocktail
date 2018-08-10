@@ -1,11 +1,28 @@
-.image-coktail {
+.image-cocktail {
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   margin :10px;
 }
 
 .info-cocktail {
-  display: flex;
-  align-items :flex-start;
-  justify-content : center;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.info-cocktail p {
+  margin :0;
+}
+
+.link-grey {
+  color :#545050;
+  font-size: 15px;
+}
+
+.link-grey:hover {
+  color:#FF5C80;
+  font-size: 15px;
+}
+
+.info-cocktail ul {
+  margin-left: 30px;
 }

@@ -1,23 +1,20 @@
 <div class="background-pink ">
   <h1 class="title-white">My <%= @cocktail.name %> Cocktail</h1>
   <div class="info-cocktail">
+    <%= cl_image_tag @cocktail.photo, height: 350, width: 500, crop: :fill , class: "image-cocktail"%>
     <div class="card cocktail-card text-left">
-      <h3>How to make this cocktail</h3>
-      <ul>
+      <h3 class="text-center">How to make this cocktail</h3>
+      <ul class="list-unstyled">
         <% @doses.each do |dose| %>
         <li>
-          <p><%= dose.ingredient.name %>: <%= link_to cocktail_dose_path(@cocktail, dose) , method: :delete, data: {confirm: "Are your sure you want to delete this dose?"} do %>
+          <p><%= link_to cocktail_dose_path(@cocktail, dose) , method: :delete, data: {confirm: "Are your sure you want to delete this dose?"}, class: "link-grey" do %>
           <i class="fas fa-trash-alt"></i>
-          <% end %></p>
-
+          <% end %> <%= dose.ingredient.name %>:</p>
           <em><%= dose.description %></em>
-
         </li>
         <% end %>
       </ul>
     </div>
-
-    <%= image_tag("mojito", size: "250x250", class: "image-coktail")%>
   </div>
 
   <h1 class="title-white">Add a new dose to your <%= @cocktail.name%></h1>
