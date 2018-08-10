@@ -20,6 +20,18 @@
     <%= image_tag("mojito", size: "250x250", class: "image-coktail")%>
   </div>
 
+  <h1 class="title-white">Add a new dose to your <%= @cocktail.name%></h1>
 
-  <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "button-white" %>
+  <div class="container form-margin">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.association :ingredient, select_html: { class: "field-rounded" }, label_html: { class: "label-white" }%>
+        <%= f.input :description, input_html: { class: "field-rounded" }, label_html: { class: "label-white" } %>
+        <%= f.submit class: "button-white button-form"%>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
 </div>
