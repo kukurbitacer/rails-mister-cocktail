@@ -4,12 +4,28 @@
   padding: 10px 15px;
   color :#FF5C80;
   font-family: "Montserrat", "Helvetica", "sans-serif";
-  color :#FF5C80;
   font-size: 15px;
 }
 
 .button-pink:hover {
   color :#db254e;
   border: solid 1px #db254e;
+  text-decoration: none;
+}
+
+.button-white {
+  border-radius: 50px;
+  border: solid 2px #FFFFFF;
+  padding: 10px 15px;
+  color :#FFFFFF;
+  font-family: "Montserrat", "Helvetica", "sans-serif";
+  font-size: 15px;
+  font-weight:500;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.button-white:hover {
+  color :#88E0A1;
+  border: solid 2px #88E0A1;
   text-decoration: none;
 }
